@@ -12,4 +12,4 @@
 
 桌面客户端与默认 Docker 配置面向本机或可信网络。公网部署需自行配置认证、TLS 和网络访问控制；不要直接公开 Redis、Flower 或未经保护的后台接口。不要把提供商 API Key 当成应用访问密码。
 
-升级前备份数据库、项目文件和配置。源码部署按 `requirements.txt` 安装 Python 依赖，在 `frontend/` 执行 `npm ci`；不要通过无约束升级或自动修复命令绕过项目的依赖版本。具体启动与备份步骤见 [DOCKER.md](DOCKER.md) 和 [STARTUP_GUIDE.md](STARTUP_GUIDE.md)。
+升级前备份数据库、项目文件和配置。源码部署按 `requirements.txt` 安装 Python 依赖，在 `frontend/` 执行 `npm ci`；不要通过无约束升级或自动修复命令绕过项目的依赖版本。具体启动与备份步骤见 [DOCKER.md](docs/DOCKER.md) 和 [STARTUP_GUIDE.md](docs/STARTUP_GUIDE.md)。

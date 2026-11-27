@@ -14,7 +14,7 @@ python -m pip install -r requirements.txt
 cp env.example .env
 ```
 
-编辑 `.env` 配置模型与 Redis，配置项见 [env.example](env.example)。macOS 可用 `brew install redis && brew services start redis`；Linux 使用发行版服务管理器启动 Redis。远程 Redis 不可用时，启动器会报错，不会用本地 Redis 或 SQLite 替代。
+编辑 `.env` 配置模型与 Redis，配置项见 [env.example](../env.example)。macOS 可用 `brew install redis && brew services start redis`；Linux 使用发行版服务管理器启动 Redis。远程 Redis 不可用时，启动器会报错，不会用本地 Redis 或 SQLite 替代。
 
 ## 启动与管理
 
@@ -43,4 +43,4 @@ celery -A backend.core.celery_app worker --loglevel=info --concurrency=1 -Q cele
 
 手动启动的进程没有脚本 PID 记录，请在各自终端用 Ctrl+C 停止。状态脚本检查已记录进程及 API/Web/Redis 可用性；Worker 进程存活不保证某个任务已经完成，任务队列与转写进度应查看 `logs/celery.log` 和项目页面。
 
-排错见 [FAQ](docs/FAQ.md)，入口与历史文件说明见 [仓库目录说明](docs/REPOSITORY_LAYOUT.md)。
+排错见 [FAQ](FAQ.md)，入口与历史文件说明见 [仓库目录说明](REPOSITORY_LAYOUT.md)。
