@@ -273,7 +273,7 @@ async def get_upload_statistics(
     try:
         from ..models.bilibili import BilibiliUploadRecord
         from datetime import datetime, timedelta
-        from sqlalchemy import func
+        from sqlalchemy import case, func
         
         # 计算时间范围
         start_date = datetime.now() - timedelta(days=days)
@@ -297,7 +297,7 @@ async def get_upload_statistics(
         account_stats = db.query(
             BilibiliUploadRecord.account_id,
             func.count(BilibiliUploadRecord.id).label('count'),
-            func.sum(func.case([(BilibiliUploadRecord.status == 'completed', 1)], else_=0)).label('successful')
+            func.sum(case((BilibiliUploadRecord.status == 'completed', 1), else_=0)).label('successful')
         ).filter(
             BilibiliUploadRecord.created_at >= start_date
         ).group_by(BilibiliUploadRecord.account_id).all()
