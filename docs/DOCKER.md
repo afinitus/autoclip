@@ -132,8 +132,8 @@ docker compose up -d --build
 [开发编排](../docker/docker-compose.dev.yml) 用于源码开发；它与生产编排可能使用相同端口，不要同时启动：
 
 ```bash
-docker compose -f docker-compose.dev.yml up -d --build
-docker compose -f docker-compose.dev.yml logs -f
+docker compose -f docker/docker-compose.dev.yml up -d --build
+docker compose -f docker/docker-compose.dev.yml logs -f
 ```
 
 更多排错见 [FAQ](FAQ.md)，版本变更见 [Releases](https://github.com/zhouxiaoka/autoclip/releases)。

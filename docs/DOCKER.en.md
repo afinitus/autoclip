@@ -118,8 +118,8 @@ Use `docker compose stop` to pause services or `docker compose down` to remove c
 The [development stack](../docker/docker-compose.dev.yml) is for source development and may use the same ports as production. Do not run both at once:
 
 ```bash
-docker compose -f docker-compose.dev.yml up -d --build
-docker compose -f docker-compose.dev.yml logs -f
+docker compose -f docker/docker-compose.dev.yml up -d --build
+docker compose -f docker/docker-compose.dev.yml logs -f
 ```
 
 See the [FAQ](FAQ.en.md) for more troubleshooting and [Releases](https://github.com/zhouxiaoka/autoclip/releases) for version changes.
